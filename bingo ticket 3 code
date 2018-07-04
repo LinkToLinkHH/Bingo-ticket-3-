@@ -1,3 +1,4 @@
+#Imports the library called random
 import random
 #Creates a 9 times 3 list called ticket
 ticket = [[0 for uy in range(3)]for x in range(9)]
@@ -9,21 +10,38 @@ for x in range(0,9):
     lowest_number = (x*10)+1
     #Creates a vatiable named highest_number to times 10 and plus 10
     highest_number = (x*10)+10
+    #creates a for loop to determine id unique is false
     for y in range(0,3):
         unique = False
+        #Makes a while loop to say whilst unique = false it would make number a
+        #random number between lowest_number and highest_number
         while unique == False:
             number = random.randint(lowest_number,highest_number)
+            #If the number is not in column it will make unique true
             if number not in column:
                 unique = True
+            #Adds the number to the list column
             column.append(number)
+            #Sorts the list in asending order
             column.sort()
+            #Makes 3 tickets and adds them to column
             for y in range(0,3):
                 ticket = column
+                #Clears the list column
                 column.clear()
 print("Bingo ticket:")
 for y in range(0,3):
     print("I",end="")
-    for x in range(0,3):
+    for x in range(0,9):
         number = "{:02}".format(ticket[x][y])
         print("I",end="")
     print("")
+
+
+
+
+
+
+
+
+
