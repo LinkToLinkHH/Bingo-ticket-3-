@@ -10,7 +10,7 @@ for x in range(0,9):
     lowest_number = (x*10)+1
     #Creates a vatiable named highest_number to times 10 and plus 10
     highest_number = (x*10)+10
-    #creates a for loop to determine id unique is false
+    #Creates a for loop to determine id unique is false
     for y in range(0,3):
         unique = False
         #Makes a while loop to say whilst unique = false it would make number a
@@ -20,24 +20,29 @@ for x in range(0,9):
             #If the number is not in column it will make unique true
             if number not in column:
                 unique = True
-            #Adds the number to the list column
-            column.append(number)
-            #Sorts the list in asending order
-            column.sort()
-            #Makes 3 tickets and adds them to column
-            for y in range(0,3):
-                ticket = column
-                #Clears the list column
-                column.clear()
-print("Bingo ticket:")
-for y in range(0,3):
-    print("I",end="")
-    for x in range(0,9):
-        number = "{:02}".format(ticket[x][y])
-        print("I",end="")
-    print("")
-
-
+                #Adds the number to the end of the column list
+                column.append(number)
+                #Sorts the list in asending order
+                column.sort()
+                #Makes 3 tickets and adds them to column
+                for y in range(0,3):
+                    ticket = column
+                    #Clears the column list
+                    column.clear()
+                    #Prints the text "Bingo ticket"
+                    print("Bingo ticket:")
+                    #Creates a for loop for the tickets
+                    for y in range(0,3):
+                        #Prints the text"I"
+                        print("I",end="")
+                        #Creates a for loop to be from 0 to 9
+                        for x in range(0,9):
+                            #Sets a variable called "number" so the numbers can be formatted
+                            number = ("{:02}".format(ticket[x][y])
+                            #Prints "I"
+                            print(number, "I",end="")
+                            #Prints a blank line
+                            print("")
 
 
 
